@@ -26,8 +26,22 @@ a[i]=Integer.parseInt(br.readLine());
 //To make a function for searching the inputted number from the array
 int search()
 {
-int f=0;  //flag variable
 while(low<high)
 {
-if 
+if(x>a[high] || x<a[low])
+  return -1;
+  mid=(low+high)/2;
+ else if(s==a[low])
+    return (low+1);
+  else if(s==a[high])
+    return (high+1);
+  else if(s==a[mid])
+    return (mid+1);
+  else if(s>a[mid])
+    low=mid+1;
+  else
+  high=mid-1;
+} //end of while
+  return -1;
+} //end of search()
   

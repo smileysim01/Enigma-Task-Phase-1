@@ -7,7 +7,7 @@ int high; //to store the upper position of array search pointer
 int mid;  //to store the middle position of array search pointer
 int x;  //to store the number to be searched
 //To initialize the global variables using parameterized constructor
-Binary_search(int size, int s)
+Modified_binary_search(int size, int s)
 {
 a=new int[size];
 high=size-1;
@@ -28,9 +28,9 @@ int search()
 {
 while(low<high)
 {
+   mid=(low+high)/2;
 if(x>a[high] || x<a[low]) //to check if searched number is out of range
   return -1;
-  mid=(low+high)/2;
  else if(x==a[low]) //to check if search number is at lower bound of array
     return (low+1);
   else if(x==a[high]) //to check if the number is at the upper bound of array

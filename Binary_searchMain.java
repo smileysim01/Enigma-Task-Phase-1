@@ -10,7 +10,7 @@ int x;  //to store the number to be searched
 //To initialize the global variables using parameterized constructor
 Binary_search(int size, int s)
 {
-a[]=new int[size];
+a=new int[size];
 high=size-1;
 x=s;
 low=0;
@@ -30,11 +30,11 @@ int search()
 while(low<high)
 {
 mid=(low+high)/2;
-if(s==a[mid])
+if(x==a[mid])
 {
 return(mid+1);
 } //end of if
-else if(s>mid)
+else if(x>mid)
 low=mid+1;
 else
 high=mid-1;
@@ -42,7 +42,7 @@ high=mid-1;
 return(-1);
 } //end of search()
 //To make a function to display the inputted array
-void display_array()
+void display_array(int size)
 {
 System.out.println("Inputted array is as follows:");
 for(int i=0; i<size; i++)
@@ -64,7 +64,7 @@ class Binary_searchMain
     s=Integer.parseInt(br.readLine());
     Binary_search ob=new Binary_search(size,s);
     ob.fill_array(size);
-    ob.display();
+    ob.display_array(size);
     int pos=ob.search();
     System.out.println("Number to be searched="+s);
     if(pos==-1)

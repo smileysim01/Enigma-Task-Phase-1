@@ -9,7 +9,7 @@ int x;  //to store the number to be searched
 //To initialize the global variables using parameterized constructor
 Binary_search(int size, int s)
 {
-a[]=new int[size];
+a=new int[size];
 high=size-1;
 x=s;
 low=0;
@@ -31,13 +31,13 @@ while(low<high)
 if(x>a[high] || x<a[low]) //to check if searched number is out of range
   return -1;
   mid=(low+high)/2;
- else if(s==a[low]) //to check if search number is at lower bound of array
+ else if(x==a[low]) //to check if search number is at lower bound of array
     return (low+1);
-  else if(s==a[high]) //to check if the number is at the upper bound of array
+  else if(x==a[high]) //to check if the number is at the upper bound of array
     return (high+1);
-  else if(s==a[mid])  //to check if the number is at the middle position
+  else if(x==a[mid])  //to check if the number is at the middle position
     return (mid+1);
-  else if(s>a[mid]) //to limit the search in upper half of array
+  else if(x>a[mid]) //to limit the search in upper half of array
     low=mid+1;
   else  //to limit the search in lower half of array
   high=mid-1;
@@ -45,7 +45,7 @@ if(x>a[high] || x<a[low]) //to check if searched number is out of range
   return -1;
 } //end of search()
   //To make a function to display the inputted array
-void display_array()
+void display_array(int size)
 {
 System.out.println("Inputted array is as follows:");
 for(int i=0; i<size; i++)
@@ -67,7 +67,7 @@ class Modified_binary_searchMain
     s=Integer.parseInt(br.readLine());
     Modified_binary_search ob=new Modified_binary_search(size,s);
     ob.fill_array(size);
-    ob.display();
+    ob.display_array(size);
     int pos=ob.search();
     System.out.println("Number to be searched="+s);
     if(pos==-1)

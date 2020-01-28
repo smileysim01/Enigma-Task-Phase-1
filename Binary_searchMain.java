@@ -52,4 +52,27 @@ for(int i=0; i<size; i++)
 System.out.print(a[i]+" ");
 } //end of display_array()
 } //end of class Binary_search
-
+//To make the main method class
+class Binary_searchMain
+{
+  public static void main(String args[])throws IOException
+  {
+    InputStreamReader re=new InputStreamReader(System.in);
+    BufferedReader br=new BufferedReader(re);
+    int size;
+    int s;
+    System.out.println("Input the size of the array.");
+    size=Integer.parseInt(br.readLine());
+    System.out.println("Input the number to be searched.");
+    s=Integer.parseInt(br.readLine());
+    Binary_search ob=new Binary_search(size,s);
+    ob.fill_array(size);
+    ob.display();
+    int pos=ob.search();
+    System.out.println("Number to be searched="+s);
+    if(pos==-1)
+    System.out.println("Number not found.");
+    else
+      System.out.println("Number found at position:"+pos);
+  } //end of main
+}//end of class

@@ -28,18 +28,18 @@ int search()
 {
 while(low<high)
 {
-if(x>a[high] || x<a[low])
+if(x>a[high] || x<a[low]) //to check if searched number is out of range
   return -1;
   mid=(low+high)/2;
- else if(s==a[low])
+ else if(s==a[low]) //to check if search number is at lower bound of array
     return (low+1);
-  else if(s==a[high])
+  else if(s==a[high]) //to check if the number is at the upper bound of array
     return (high+1);
-  else if(s==a[mid])
+  else if(s==a[mid])  //to check if the number is at the middle position
     return (mid+1);
-  else if(s>a[mid])
+  else if(s>a[mid]) //to limit the search in upper half of array
     low=mid+1;
-  else
+  else  //to limit the search in lower half of array
   high=mid-1;
 } //end of while
   return -1;

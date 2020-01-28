@@ -44,4 +44,35 @@ if(x>a[high] || x<a[low])
 } //end of while
   return -1;
 } //end of search()
-  
+  //To make a function to display the inputted array
+void display_array()
+{
+System.out.println("Inputted array is as follows:");
+for(int i=0; i<size; i++)
+System.out.print(a[i]+" ");
+} //end of display_array()
+} //end of class Binary_search
+//To make the main method class
+class Modified_binary_searchMain
+{
+  public static void main(String args[])throws IOException
+  {
+    InputStreamReader re=new InputStreamReader(System.in);
+    BufferedReader br=new BufferedReader(re);
+    int size;
+    int s;
+    System.out.println("Input the size of the array.");
+    size=Integer.parseInt(br.readLine());
+    System.out.println("Input the number to be searched.");
+    s=Integer.parseInt(br.readLine());
+    Modified_binary_search ob=new Modified_binary_search(size,s);
+    ob.fill_array(size);
+    ob.display();
+    int pos=ob.search();
+    System.out.println("Number to be searched="+s);
+    if(pos==-1)
+    System.out.println("Number not found.");
+    else
+      System.out.println("Number found at position:"+pos);
+  } //end of main
+}//end of class
